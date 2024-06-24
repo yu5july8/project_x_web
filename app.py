@@ -10,7 +10,6 @@ import openai
 import stripe
 import io
 
-
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['PROCESSED_FOLDER'] = 'processed'
@@ -109,7 +108,7 @@ def create_checkout_session():
                         'product_data': {
                             'name': 'DocTune Monthly Subscription',
                         },
-                        'unit_amount': 20,
+                        'unit_amount': 2000,  # Stripe requires amount in cents
                         'recurring': {
                             'interval': 'month',
                         },
