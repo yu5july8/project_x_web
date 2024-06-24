@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Your Document is Ready</h1>
+<p>Your document has been processed successfully. You can download the processed document by clicking the button below.</p>
+<a href="{{ url_for('download_processed_document') }}" class="button">Download Document</a>
+{% endblock %}
