@@ -242,7 +242,6 @@ def generate_alt_text(image_paths):
             img_data = img_file.read()
             response = openai.Image.create(image=img_data)
             alt_text = response['data']['alt_text']
-            alt_text = response['data']['alt_text']
             alt_texts.append(alt_text)
     return alt_texts
 
@@ -251,7 +250,7 @@ def auto_tag_content(content):
     for text in content['text']:
         tagged_content.append(f"<p>{text}</p>")
     alt_texts = generate_alt_text(content['images'])
-    for img_path, alt_text in zip(content['images'], alt_texts)):
+    for img_path, alt_text in zip(content['images'], alt_texts):
         tagged_content.append(f'<img src="{img_path}" alt="{alt_text}"/>')
     return tagged_content
 
@@ -266,4 +265,3 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-           
