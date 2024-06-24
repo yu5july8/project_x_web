@@ -10,6 +10,7 @@ import openai
 import stripe
 import io
 
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['PROCESSED_FOLDER'] = 'processed'
